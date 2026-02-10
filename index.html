@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AW_GEMS | Exclusive Gemstone Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#D4AF37',
+                        'royal-dark': '#0B0F19',
+                        'royal-blue': '#1E293B',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gem-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(212, 175, 55, 0.1), 0 10px 10px -5px rgba(212, 175, 55, 0.04);
+        }
+    </style>
+</head>
+
+<body class="bg-royal-dark text-white font-sans antialiased selection:bg-royal-gold selection:text-royal-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-royal-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="font-serif text-3xl font-bold text-royal-gold tracking-widest hover:opacity-80 transition">AW_GEMS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-white hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="collection.html"
+                            class="text-white/80 hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Collection</a>
+                        <a href="about.html"
+                            class="text-white/80 hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Our
+                            Story</a>
+                        <a href="contact.html"
+                            class="bg-royal-gold text-royal-dark hover:bg-white px-6 py-2 rounded-full text-sm font-bold transition duration-300 transform hover:-translate-y-0.5">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-royal-dark border-t border-white/10" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-royal-gold block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="collection.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Collection</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our
+                    Story</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=2670&auto=format&fit=crop"
+                alt="Luxury Gems Background" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/40 to-royal-dark/10"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" style="animation: fadeInUp 1s ease-out;">
+            <p class="text-royal-gold font-medium tracking-[0.3em] mb-4 uppercase text-sm md:text-base">Experience True
+                Brilliance</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                Timeless <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-royal-gold to-yellow-200">Elegance</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Discover the world's finest sapphires, rubies, and emeralds. AW_GEMS brings you ethically sourced,
+                hand-cut perfection.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="collection.html"
+                    class="bg-royal-gold text-royal-dark px-8 py-4 rounded-none font-bold text-lg hover:bg-white transition duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                    View Collection
+                </a>
+                <a href="contact.html"
+                    class="border border-white/30 hover:border-royal-gold hover:text-royal-gold text-white px-8 py-4 rounded-none font-medium text-lg transition duration-300 backdrop-blur-sm">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Categories Section -->
+    <div class="py-24 bg-royal-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">Our Curated Selection</h2>
+                <div class="w-24 h-1 bg-royal-gold mx-auto"></div>
+                <p class="mt-4 text-gray-400">Handpicked masterpieces for the discerning collector.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Sapphires -->
+                <div
+                    class="group relative overflow-hidden rounded-lg cursor-pointer gem-hover transition duration-500 h-96">
+                    <img src="https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=2574&auto=format&fit=crop"
+                        alt="Sapphire"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h3
+                            class="font-serif text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                            Blue Sapphires</h3>
+                        <p
+                            class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">
+                            Rare Ceylon sapphires with deep royal blue hues.
+                        </p>
+                        <a href="collection.html"
+                            class="mt-4 inline-flex items-center gap-2 text-royal-gold text-sm font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 delay-200 hover:text-white">
+                            Shop Collection <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Rubies -->
+                <div
+                    class="group relative overflow-hidden rounded-lg cursor-pointer gem-hover transition duration-500 h-96">
+                    <img src="https://images.unsplash.com/photo-1605100804763-ebea24d546fb?q=80&w=2670&auto=format&fit=crop"
+                        alt="Ruby"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h3
+                            class="font-serif text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                            Pigeon Blood Rubies</h3>
+                        <p
+                            class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">
+                            Intense red hues symbolizing passion and power.
+                        </p>
+                        <a href="collection.html"
+                            class="mt-4 inline-flex items-center gap-2 text-royal-gold text-sm font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 delay-200 hover:text-white">
+                            Shop Collection <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Rare Collection -->
+                <div
+                    class="group relative overflow-hidden rounded-lg cursor-pointer gem-hover transition duration-500 h-96">
+                    <img src="https://images.unsplash.com/photo-1617038224558-28309a882771?q=80&w=2574&auto=format&fit=crop"
+                        alt="Rare Gem"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h3
+                            class="font-serif text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                            Rare Finds</h3>
+                        <p
+                            class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-100">
+                            Padparadscha, Alexandrite, and rare collectibles.
+                        </p>
+                        <a href="collection.html"
+                            class="mt-4 inline-flex items-center gap-2 text-royal-gold text-sm font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 delay-200 hover:text-white">
+                            Discover More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Snippet -->
+    <section class="py-24 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-royal-gold/5 blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-500/5 blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-royal-gold"></div>
+                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2675&auto=format&fit=crop"
+                    alt="Gem Inspection"
+                    class="rounded-lg shadow-2xl relative z-10 w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
+                <div class="absolute -bottom-4 -right-4 w-20 h-20 border-b-2 border-r-2 border-royal-gold"></div>
+            </div>
+            <div>
+                <h2 class="font-serif text-4xl md:text-5xl mb-6">A Legacy of <br><span class="text-royal-gold">Trust &
+                        Excellence</span></h2>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    At AW_GEMS, we don't just sell stones; we curate moments. With over 20 years of experience in
+                    sourcing raw gems directly from the mines of Ratnapura, we guarantee authenticity and value that
+                    appreciates over time.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-royal-gold rounded-full"></span>
+                        <span class="text-gray-300">Certified by GIA & GRS</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-royal-gold rounded-full"></span>
+                        <span class="text-gray-300">Ethically Sourced & Conflict-Free</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-royal-gold rounded-full"></span>
+                        <span class="text-gray-300">Custom Setting Design Available</span>
+                    </li>
+                </ul>
+                <a href="about.html"
+                    class="inline-block text-royal-gold border-b border-royal-gold pb-1 hover:text-white hover:border-white transition duration-300">Read
+                    Our Full Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="text-2xl font-serif font-bold text-royal-gold tracking-widest">AW_GEMS</span>
+                    <p class="mt-4 text-gray-500 text-sm leading-relaxed">
+                        Bringing Sri Lanka's finest gems to the world. Luxury, authenticity, and brilliance in every
+                        stone.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-serif mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-royal-gold transition">Home</a></li>
+                        <li><a href="collection.html" class="hover:text-royal-gold transition">Collection</a></li>
+                        <li><a href="about.html" class="hover:text-royal-gold transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-royal-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-serif mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li>No. 45, Rampart Street, Galle Fort</li>
+                        <li>Sri Lanka</li>
+                        <li>+94 77 123 4567</li>
+                        <li>info@awgems.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-serif mb-6">Newsletter</h4>
+                    <div class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email Address"
+                            class="bg-gray-900 border border-gray-800 p-3 rounded text-sm focus:outline-none focus:border-royal-gold transition">
+                        <button
+                            class="bg-royal-gold text-royal-dark font-bold py-2 px-4 rounded hover:bg-white transition">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+                &copy; 2024 AW_GEMS. All rights reserved. Designed by Antigravity.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple entry animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('opacity-100');
+        });
+    </script>
+</body>
+
+</html>

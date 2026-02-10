@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | AW_GEMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#D4AF37',
+                        'royal-dark': '#0B0F19',
+                        'royal-blue': '#1E293B',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-royal-dark text-white font-sans antialiased selection:bg-royal-gold selection:text-royal-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-royal-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="font-serif text-3xl font-bold text-royal-gold tracking-widest hover:opacity-80 transition">AW_GEMS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-white hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="collection.html"
+                            class="text-white/80 hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Collection</a>
+                        <a href="about.html"
+                            class="text-royal-gold border-b-2 border-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Our
+                            Story</a>
+                        <a href="contact.html"
+                            class="bg-royal-gold text-royal-dark hover:bg-white px-6 py-2 rounded-full text-sm font-bold transition duration-300 transform hover:-translate-y-0.5">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-royal-dark border-t border-white/10" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-royal-gold block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="collection.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Collection</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our
+                    Story</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="relative py-32 bg-royal-blue overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=2574&auto=format&fit=crop"
+                class="w-full h-full object-cover opacity-20 filter grayscale">
+            <div class="absolute inset-0 bg-gradient-to-r from-royal-dark to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6">Our Legacy</h1>
+            <p class="text-xl text-gray-300 max-w-2xl font-light">
+                From the legendary mines of Ceylon to the finest jewelry collections worldwide.
+            </p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="py-24 bg-royal-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-20">
+                <h2 class="font-serif text-3xl text-royal-gold mb-6">The Beginning</h2>
+                <p class="text-gray-400 leading-relaxed text-lg">
+                    Founded in the heart of Ratnapura, the "City of Gems", AW_GEMS began with a simple mission: to share
+                    the unparalleled beauty of Sri Lankan gemstones with the world. What started as a small family trade
+                    has grown into a globally recognized name for quality and authenticity.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1596942511467-fce5237c1d73?q=80&w=2669&auto=format&fit=crop"
+                        alt="Gem Cutting" class="rounded-lg shadow-xl border border-white/10">
+                </div>
+                <div>
+                    <h2 class="font-serif text-3xl text-royal-gold mb-6">Craftsmanship</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Every stone in our collection is hand-selected and precision-cut by master artisans. We believe
+                        that the cut is what unlocks a gem's soul. Our team combines traditional techniques passed down
+                        through generations with modern technology to ensure maximum brilliance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-royal-blue/30 p-10 rounded-2xl border border-white/5 text-center">
+                <h3 class="font-serif text-2xl text-white mb-8">Our Guarantee</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="text-royal-gold text-4xl mb-4"><i class="fas fa-certificate"></i></div>
+                        <h4 class="font-bold text-white mb-2">Authenticity</h4>
+                        <p class="text-sm text-gray-400">GIA/GRS Certified</p>
+                    </div>
+                    <div>
+                        <div class="text-royal-gold text-4xl mb-4"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h4 class="font-bold text-white mb-2">Ethics</h4>
+                        <p class="text-sm text-gray-400">Conflict-Free Sourcing</p>
+                    </div>
+                    <div>
+                        <div class="text-royal-gold text-4xl mb-4"><i class="fas fa-infinity"></i></div>
+                        <h4 class="font-bold text-white mb-2">Lifetime</h4>
+                        <p class="text-sm text-gray-400">Quality Assurance</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

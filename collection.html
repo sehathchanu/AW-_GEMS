@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | AW_GEMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for WhatsApp Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#D4AF37',
+                        'royal-dark': '#0B0F19',
+                        'royal-blue': '#1E293B',
+                        'whatsapp': '#25D366'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-royal-dark text-white font-sans antialiased selection:bg-royal-gold selection:text-royal-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-royal-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="font-serif text-3xl font-bold text-royal-gold tracking-widest hover:opacity-80 transition">AW_GEMS</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-white hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="collection.html"
+                            class="text-royal-gold border-b-2 border-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Collection</a>
+                        <a href="about.html"
+                            class="text-white/80 hover:text-royal-gold px-3 py-2 rounded-md text-sm font-medium transition duration-300">Our
+                            Story</a>
+                        <a href="contact.html"
+                            class="bg-royal-gold text-royal-dark hover:bg-white px-6 py-2 rounded-full text-sm font-bold transition duration-300 transform hover:-translate-y-0.5">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-royal-dark border-t border-white/10" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-royal-gold block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="collection.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Collection</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our
+                    Story</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-royal-blue pt-40 pb-20 relative overflow-hidden">
+        <div
+            class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')]">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <h1 class="font-serif text-5xl md:text-6xl text-white font-bold mb-6">Our Masterpieces</h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Explore hand-selected gemstones. Order directly via
+                WhatsApp.</p>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="py-24 bg-royal-dark min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Filters -->
+            <div class="flex justify-center gap-4 mb-16 flex-wrap">
+                <button
+                    class="filter-btn active px-6 py-2 rounded-full border border-royal-gold bg-royal-gold text-royal-dark font-bold hover:bg-white transition duration-300"
+                    onclick="filterSelection('all')">All Gems</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-royal-gold hover:text-royal-gold transition duration-300"
+                    onclick="filterSelection('sapphire')">Sapphires</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-royal-gold hover:text-royal-gold transition duration-300"
+                    onclick="filterSelection('ruby')">Rubies</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-royal-gold hover:text-royal-gold transition duration-300"
+                    onclick="filterSelection('emerald')">Emeralds</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-royal-gold hover:text-royal-gold transition duration-300"
+                    onclick="filterSelection('semi-precious')">Semi-Precious</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Item 1: Royal Blue Sapphire -->
+                <div
+                    class="gem-card sapphire group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-blue-900/20 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=2574&auto=format&fit=crop"
+                            alt="Royal Blue Sapphire"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-royal-gold text-royal-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Premium</div>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Royal Blue Sapphire</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Ceylon (Sri Lanka) | Weight: 2.5ct</p>
+                        <p class="text-gray-500 text-xs mb-4">Certified unheated natural blue sapphire with exceptional
+                            clarity.</p>
+
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$4,500</span>
+                            <button onclick="orderGem('Royal Blue Sapphire', '4,500')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Burmese Ruby -->
+                <div
+                    class="gem-card ruby group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-red-900/20 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=2670&auto=format&fit=crop"
+                            alt="Pigeon Blood Ruby"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Rare</div>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Burmese Ruby</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Myanmar | Weight: 1.8ct</p>
+                        <p class="text-gray-500 text-xs mb-4">Vivid pigeon blood red, standard heat treatment only.</p>
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$12,000</span>
+                            <button onclick="orderGem('Burmese Ruby', '12,000')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Colombian Emerald -->
+                <div
+                    class="gem-card emerald group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-green-900/20 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600003014608-c2ccc1570a65?q=80&w=2574&auto=format&fit=crop"
+                            alt="Colombian Emerald"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Colombian Emerald</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Colombia | Weight: 3.1ct</p>
+                        <p class="text-gray-500 text-xs mb-4">Minor oil, vibrant green color with excellent
+                            transparency.</p>
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$8,200</span>
+                            <button onclick="orderGem('Colombian Emerald', '8,200')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Star Sapphire (New) -->
+                <div
+                    class="gem-card sapphire group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-blue-900/20 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=2574&auto=format&fit=crop"
+                            alt="Star Sapphire"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Star Sapphire</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Ceylon | Weight: 5.4ct</p>
+                        <p class="text-gray-500 text-xs mb-4">Distinct 6-ray star, translucent milky blue body color.
+                        </p>
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$6,800</span>
+                            <button onclick="orderGem('Star Sapphire', '6,800')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Yellow Sapphire (New) -->
+                <div
+                    class="gem-card sapphire group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-yellow-900/20 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617038224558-28309a882771?q=80&w=2574&auto=format&fit=crop"
+                            alt="Yellow Sapphire"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Golden Yellow Sapphire</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Ceylon | Weight: 3.0ct</p>
+                        <p class="text-gray-500 text-xs mb-4">Vibrant canary yellow, popular for astrological purposes.
+                        </p>
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$3,200</span>
+                            <button onclick="orderGem('Golden Yellow Sapphire', '3,200')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Moonlight Moonstone (New - Semi Precious) -->
+                <div
+                    class="gem-card semi-precious group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-blue-100/10 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1627931327117-0056637e112d?q=80&w=2670&auto=format&fit=crop"
+                            alt="Moonstone"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Blue Moonstone</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Ceylon | Weight: 4.5ct</p>
+                        <p class="text-gray-500 text-xs mb-4">Strong blue sheen, high clarity.</p>
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$800</span>
+                            <button onclick="orderGem('Blue Moonstone', '800')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7: Padparadscha Sapphire (New - Rare) -->
+                <div
+                    class="gem-card sapphire group bg-gray-900 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-orange-900/20 transition duration-500 border border-white/5 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=2574&auto=format&fit=crop"
+                            alt="Padparadscha"
+                            class="w-full h-full object-cover transform group-hover:scale-110 hue-rotate-15 transition duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Ultra Rare</div>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <h3 class="font-serif text-2xl text-white mb-2 gemstone-name">Padparadscha</h3>
+                        <p class="text-gray-400 text-sm mb-4">Origin: Ceylon | Weight: 1.2ct</p>
+                        <p class="text-gray-500 text-xs mb-4">The legendary 'Lotus Blossom' color. Perfect pink-orange
+                            blend.</p>
+                        <div class="mt-auto border-t border-gray-800 pt-6 flex justify-between items-center">
+                            <span class="text-royal-gold font-bold text-2xl gemstone-price">$15,000</span>
+                            <button onclick="orderGem('Padparadscha', '15,000')"
+                                class="bg-whatsapp hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-xl"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Filter Script
+        function filterSelection(category) {
+            const cards = document.getElementsByClassName('gem-card');
+            const buttons = document.getElementsByClassName('filter-btn');
+
+            // Note: In a real app, I'd loop through buttons to toggle 'active' class/style
+
+            for (let i = 0; i < cards.length; i++) {
+                if (category === 'all') {
+                    cards[i].style.display = 'flex'; // Changed to flex to keep layout
+                } else {
+                    if (cards[i].classList.contains(category)) {
+                        cards[i].style.display = 'flex';
+                    } else {
+                        cards[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        // WhatsApp Order System
+        function orderGem(name, price) {
+            // Replace with your real WhatsApp number
+            const phoneNumber = "94771234567";
+            const message = `Halo AW_GEMS, I am interested in buying the *${name}* listed for *${price}*. Is this available?`;
+
+            // Encode for URL
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open in new tab
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
